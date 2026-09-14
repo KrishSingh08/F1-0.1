@@ -25,13 +25,45 @@ const races = [
     ['Abu Dhabi', 'Yas Marina', '6 DIC', '17:00', 'Yas Marina Circuit', '—', 'In attesa della gara', 0]
 ];
 
+// Mappa delle bandiere in base al nome della nazione (o evento)
+const flags = {
+    'Australia': '🇦🇺',
+    'Cina': '🇨🇳',
+    'Giappone': '🇯🇵',
+    'Bahrain': '🇧🇭',
+    'Arabia Saudita': '🇸🇦',
+    'Miami': '🇺🇸',
+    'Canada': '🇨🇦',
+    'Monaco': '🇲🇨',
+    'Spagna': '🇪🇸',
+    'Austria': '🇦🇹',
+    'Gran Bretagna': '🇬🇧',
+    'Belgio': '🇧🇪',
+    'Ungheria': '🇭🇺',
+    'Paesi Bassi': '🇳🇱',
+    'Italia': '🇮🇹',
+    'Azerbaijan': '🇦🇿',
+    'Singapore': '🇸🇬',
+    'USA': '🇺🇸',
+    'Messico': '🇲🇽',
+    'Brasile': '🇧🇷',
+    'Las Vegas': '🇺🇸',
+    'Qatar': '🇶🇦',
+    'Abu Dhabi': '🇦🇪'
+};
+
 const box = document.getElementById('races');
 let only = false;
 
 function render() {
     box.innerHTML = '';
     races.forEach((r, i) => {
-        if (only && r[7]) return;
+        // Se 'only' è true, mostra solo le gare non disputate (dove r[7] === 0)
+        if (only && r[7] === 1) return;
+
+        const country = r[0];
+        const flag = flags[country] || '🏁'; // Bandiera di fallback se non trovata
+
         box.innerHTML += `
             <article class="race">
                 <div class="track">
@@ -39,7 +71,7 @@ function render() {
                     <span class="status ${r[7] ? 'done' : 'upcoming'}">${r[7] ? '✕ TERMINATA' : '✓ DA CORRERE'}</span>
                 </div>
                 <div class="race-body">
-                    <h3>🇮🇹 ${r[0].toUpperCase()}</h3>
+                    <h3>${flag} ${country.toUpperCase()}</h3>
                     <div class="place">${r[1]} • ${r[2]}</div>
                     <div class="meta">📍 <b>${r[4]}</b><br>🕒 Gara: <b>${r[3]} locale</b><br>🏆 Vincitore: <b>${r[5]}</b></div>
                     <div class="podium">${r[7] ? `🥇🥈🥉 <b>TOP 3</b><br>${r[6]}` : '⏳ <b>RISULTATI</b><br>Disponibili dopo la gara'}</div>
@@ -100,7 +132,7 @@ function initCountdown() {
 
         const timerEl = document.getElementById("countdown-timer");
         if(timerEl) {
-            timerEl.innerHTML = `⏰ Mancano: <b>${days}g</b> : <b>${hours}h</b> : <b>${minutes}m</b> : <b>${seconds}s</b> al GP di Baku`;
+            timerEl.innerHTML = `🇦🇿 Mancano: <b>${days}g</b> : <b>${hours}h</b> : <b>${minutes}m</b> : <b>${seconds}s</b> al GP di Baku`;
         }
     }, 1000);
 }
