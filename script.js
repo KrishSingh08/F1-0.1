@@ -15,7 +15,7 @@ const races = [
     ['Paesi Bassi', 'Zandvoort', '23 AGO', '15:00', 'Circuit Zandvoort', 'Lando Norris', 'Lando Norris | Kimi Antonelli | George Russell', 1],
     ['Italia', 'Monza', '6 SET', '15:00', 'Autodromo Nazionale Monza', 'Kimi Antonelli', 'Kimi Antonelli | George Russell | Max Verstappen', 1],
     ['Spagna', 'Madrid', '13 SET', '15:00', 'Madrid IFEMA', 'Kimi Antonelli', 'Kimi Antonelli | Max Verstappen | Lando Norris', 1],
-    ['Azerbaijan', 'Baku', '26 SET', '14:00', 'Baku City Circuit', '—', 'In attesa della gara', 0],
+    ['Azerbaijan', 'Baku', '26 SET', '14:00', 'Baku City Circuit', '—', 'Risultati non ancora inseriti', 1],
     ['Singapore', 'Marina Bay', '11 OTT', '20:00', 'Marina Bay', '—', 'In attesa della gara', 0],
     ['USA', 'Austin', '25 OTT', '15:00', 'Circuit of the Americas', '—', 'In attesa della gara', 0],
     ['Messico', 'Mexico City', '1 NOV', '14:00', 'Autódromo Hermanos Rodríguez', '—', 'In attesa della gara', 0],
