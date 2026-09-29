@@ -98,7 +98,7 @@ function initCountdown() {
     countdownContainer.className = 'countdown-box';
     countdownContainer.innerHTML = `
         <div class="countdown-content">
-            <p class="eyebrow" style="margin: 0 0 5px 0;">PROSSIMO GRAN PREMIO (BAKU)</p>
+            <p class="eyebrow" style="margin: 0 0 5px 0;">PROSSIMO GRAN PREMIO (BAHRAIN)</p>
             <h3 id="countdown-timer" style="font-family: 'Barlow Condensed'; font-size: 24px; margin: 0;">Caricamento conto alla rovescia...</h3>
         </div>
     `;
@@ -125,14 +125,14 @@ function initCountdown() {
             return;
         }
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24)); 
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         const timerEl = document.getElementById("countdown-timer");
         if(timerEl) {
-            timerEl.innerHTML = `🇦🇿 Mancano: <b>${days}g</b> : <b>${hours}h</b> : <b>${minutes}m</b> : <b>${seconds}s</b> al GP di Baku`;
+            timerEl.innerHTML = `🇧🇭 Mancano: <b>${days}g</b> : <b>${hours}h</b> : <b>${minutes}m</b> : <b>${seconds}s</b> al GP di Bahrain`;
         }
     }, 1000);
 }
