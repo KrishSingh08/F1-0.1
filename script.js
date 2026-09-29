@@ -114,7 +114,7 @@ function initCountdown() {
 
     mainSection.insertBefore(countdownContainer, mainSection.firstChild);
 
-    const targetDate = new Date("2026-09-26T14:00:00").getTime();
+    const targetDate = new Date("2026-10-04T15:00:00").getTime();
 
     setInterval(() => {
         const now = new Date().getTime();
